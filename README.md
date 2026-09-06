@@ -11,11 +11,15 @@
 
 **Soru 3, gradyan tabanlı optimizasyon:** Fletcher-Reeves (Conjugate Gradient) ve Newton's Method sıfırdan yazıldı, backtracking line search ile. Üç farklı başlangıç noktasından yakınsama davranışı ve Hessian koşul sayısının optimizasyon yolu boyunca değişimi incelendi.
 
+**Kapsam:** üç probleme odaklanan bir öğrenme egzersizi, altı algoritma sıfırdan yazıldı; üretim ortamı için bir sayısal optimizasyon kütüphanesi değil.
+
 </details>
 
 ---
 
 Three independent optimization problems. In every one, the algorithm itself is written from scratch instead of calling a library function like `scipy.optimize`, since the point was to understand the algorithm, not just get an answer.
+
+**Scope:** six classic optimization algorithms implemented from scratch as a learning exercise across three problems, not a production numerical library.
 
 ## Problem 1: ellipse fitting (nonlinear least squares)
 
@@ -23,7 +27,7 @@ Fitting a five-parameter ellipse model (center, semi-axes, rotation angle) to 20
 
 ## Problem 2: the dolphin function (global optimization)
 
-Finding the global minimum of an objective function with many local minima, parameterized by student ID. Particle Swarm Optimization and a Genetic Algorithm are both built from scratch. The comparison includes 25 independent runs for statistical comparison (success rate, mean and standard deviation), a robustness test on a noisy version of the function, performance across different evaluation budgets (750, 1000, 1500), and success rate at finding the global minimum from random sub-regions.
+Finding the global minimum of an objective function with many local minima, using a personalized set of function parameters. Particle Swarm Optimization and a Genetic Algorithm are both built from scratch. The comparison includes 25 independent runs for statistical comparison (success rate, mean and standard deviation), a robustness test on a noisy version of the function, performance across different evaluation budgets (750, 1000, 1500), and success rate at finding the global minimum from random sub-regions.
 
 ## Problem 3: the Beale function (gradient-based optimization)
 
