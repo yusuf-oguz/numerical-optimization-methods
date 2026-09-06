@@ -13,6 +13,8 @@
 
 </details>
 
+---
+
 Three independent optimization problems. In every one, the algorithm itself is written from scratch instead of calling a library function like `scipy.optimize`, since the point was to understand the algorithm, not just get an answer.
 
 ## Problem 1: ellipse fitting (nonlinear least squares)
