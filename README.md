@@ -1,37 +1,41 @@
-# Optimization for Data Science — Homework 2
+# Six Optimization Algorithms, Built from Scratch
 
-İTÜ YZV202E (Optimization for Data Science) dersi kapsamında hazırlanmış, üç bağımsız optimizasyon problemini kapsayan bir ödev. Her problemde standart kütüphane fonksiyonları (`scipy.optimize` vb.) yerine algoritmalar **sıfırdan** implemente edilmiş ve karşılaştırmalı olarak analiz edilmiştir.
+<details>
+<summary>🇹🇷 Türkçe özet için tıklayın</summary>
 
-## İçerik
+Üç bağımsız optimizasyon problemi, hepsinde `scipy.optimize` gibi hazır kütüphane fonksiyonları yerine algoritmalar **sıfırdan** yazılmış ve karşılaştırmalı olarak analiz edilmiş.
 
-### Soru 1 — Elips Uydurma (Nonlinear Least Squares)
-200 veri noktasına (`data.txt`) 5 parametreli bir elips modeli (merkez, yarı-eksenler, dönüş açısı) uydurma problemi.
-- Jacobian matrisi elle türetildi.
-- **Gauss-Newton** ve **Levenberg-Marquardt** algoritmaları sıfırdan yazıldı.
-- Yakınsama hızı ve koşul sayısı (condition number) üzerinden karşılaştırmalı analiz.
+**Soru 1, elips uydurma:** 200 veri noktasına 5 parametreli bir elips modeli uydurma problemi. Jacobian matrisi elle türetildi, Gauss-Newton ve Levenberg-Marquardt algoritmaları sıfırdan yazılıp yakınsama hızı ve koşul sayısı üzerinden karşılaştırıldı.
 
-### Soru 2 — Dolphin Fonksiyonu (Global Optimizasyon)
-Çok sayıda yerel minimuma sahip, öğrenci numarasına göre parametrelenmiş bir hedef fonksiyonun global minimumunu bulma problemi.
-- **Particle Swarm Optimization (PSO)** ve **Genetik Algoritma** sıfırdan yazıldı.
-- 25 bağımsız denemeyle istatistiksel karşılaştırma (başarı oranı, ortalama/std sapma).
-- Gürültülü fonksiyon versiyonunda sağlamlık testi.
-- Farklı değerlendirme bütçeleri (750/1000/1500) altında performans karşılaştırması.
-- Rastgele alt-bölgelerde global minimumu bulma başarısı.
+**Soru 2, global optimizasyon:** çok sayıda yerel minimuma sahip bir hedef fonksiyonun global minimumunu bulma problemi. Particle Swarm Optimization ve Genetik Algoritma sıfırdan yazıldı, 25 bağımsız denemeyle istatistiksel karşılaştırma yapıldı, gürültülü versiyonda sağlamlık test edildi, farklı değerlendirme bütçeleri altında performans karşılaştırıldı.
 
-### Soru 3 — Beale Fonksiyonu (Gradyan Tabanlı Optimizasyon)
-- **Fletcher-Reeves (Conjugate Gradient)** ve **Newton's Method** sıfırdan yazıldı, backtracking line search ile.
-- 3 farklı başlangıç noktasından (minimuma yakın / uzak / tekil Hessian) yakınsama davranışı karşılaştırması.
-- Hessian koşul sayısının optimizasyon yolu boyunca değişiminin analizi.
+**Soru 3, gradyan tabanlı optimizasyon:** Fletcher-Reeves (Conjugate Gradient) ve Newton's Method sıfırdan yazıldı, backtracking line search ile. Üç farklı başlangıç noktasından yakınsama davranışı ve Hessian koşul sayısının optimizasyon yolu boyunca değişimi incelendi.
 
-## Dosyalar
+</details>
 
-| Dosya | Açıklama |
+Three independent optimization problems. In every one, the algorithm itself is written from scratch instead of calling a library function like `scipy.optimize`, since the point was to understand the algorithm, not just get an answer.
+
+## Problem 1: ellipse fitting (nonlinear least squares)
+
+Fitting a five-parameter ellipse model (center, semi-axes, rotation angle) to 200 data points in `data.txt`. The Jacobian is derived by hand. Gauss-Newton and Levenberg-Marquardt are both implemented from scratch and compared on convergence speed and condition number.
+
+## Problem 2: the dolphin function (global optimization)
+
+Finding the global minimum of an objective function with many local minima, parameterized by student ID. Particle Swarm Optimization and a Genetic Algorithm are both built from scratch. The comparison includes 25 independent runs for statistical comparison (success rate, mean and standard deviation), a robustness test on a noisy version of the function, performance across different evaluation budgets (750, 1000, 1500), and success rate at finding the global minimum from random sub-regions.
+
+## Problem 3: the Beale function (gradient-based optimization)
+
+Fletcher-Reeves (a conjugate gradient method) and Newton's Method, both built from scratch with backtracking line search. Compares convergence behavior from three different starting points (close to the minimum, far from it, and one where the Hessian is singular), and tracks how the Hessian's condition number changes along the optimization path.
+
+## Files
+
+| File | What it is |
 |---|---|
-| `hw2.ipynb` | Ana çalışma — tüm kod, görselleştirmeler ve yazılı analiz |
-| `data.txt` | Soru 1 için elips veri noktaları (200 nokta) |
-| `hw2.pdf` | Not defterinin PDF çıktısı (teslim kaydı) |
-| `Optimization_2025_2026_HW2.pdf` | Ödevin orijinal soru kağıdı |
+| `hw2.ipynb` | The main notebook: all code, plots, and written analysis |
+| `data.txt` | The 200 ellipse data points used in Problem 1 |
+| `hw2.pdf` | A PDF export of the notebook |
+| `Optimization_2025_2026_HW2.pdf` | The original problem statement |
 
-## Kullanılan Araçlar
+## Tools
 
-Python — NumPy, Matplotlib. (Bilinçli olarak `scipy.optimize` gibi hazır optimizasyon kütüphaneleri kullanılmadı; amaç algoritmaların kendisini uygulamaktı.)
+Python, NumPy, Matplotlib. `scipy.optimize` and similar ready-made optimizers were deliberately not used, the goal was implementing the algorithms themselves.
