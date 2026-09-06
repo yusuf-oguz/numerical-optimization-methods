@@ -33,10 +33,10 @@ Fletcher-Reeves (a conjugate gradient method) and Newton's Method, both built fr
 
 | File | What it is |
 |---|---|
-| `hw2.ipynb` | The main notebook: all code, plots, and written analysis |
+| `solutions.ipynb` | The main notebook: all code, plots, and written analysis |
 | `data.txt` | The 200 ellipse data points used in Problem 1 |
-| `hw2.pdf` | A PDF export of the notebook |
-| `Optimization_2025_2026_HW2.pdf` | The original problem statement |
+| `solutions.pdf` | A PDF export of the notebook |
+| `problem_statement.pdf` | The original problem statement |
 
 ## Tools
 
